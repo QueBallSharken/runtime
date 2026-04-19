@@ -1,0 +1,12 @@
+{
+  "_version": "2026.04.19.1",
+  "default": {
+    "max_spend_usd": 50
+  },
+  "agent_finance_01": {
+    "max_spend_usd": 500
+  },
+  "agent_ops_01": {
+    "max_spend_usd": 200
+  }
+}
