@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Halcyon HUD</title>
+  <link rel="stylesheet" href="/static/hud.css">
+</head>
+<body>
+  <main>
+    <section class="health-strip" aria-label="Runtime health">
+      <div><span>Runtime</span><strong id="health-runtime">unknown</strong></div>
+      <div><span>Spec</span><strong id="health-spec">unknown</strong></div>
+      <div><span>DB</span><strong id="health-db">unknown</strong></div>
+      <div><span>Model</span><strong id="health-model">unknown</strong></div>
+      <div><span>Mode</span><strong id="health-mode">unknown</strong></div>
+      <div><span>Pending</span><strong id="health-pending">0</strong></div>
+      <div><span>Event</span><strong id="health-event">0</strong></div>
+    </section>
+
+    <section class="panel chat-panel">
+      <h1>Halcyon</h1>
+      <form id="chat-form">
+        <label for="chat-input">Message</label>
+        <textarea id="chat-input" name="message" rows="4" autocomplete="off"></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <div id="chat-output" class="output" aria-live="polite">No turn yet.</div>
+      <details>
+        <summary>view raw JSON</summary>
+        <pre id="raw-turn">null</pre>
+      </details>
+    </section>
+
+    <section class="state-strip" aria-label="Runtime state">
+      <div><span>Status</span><strong id="turn-status">none</strong></div>
+      <div><span>Binding</span><strong id="binding-status">none</strong></div>
+      <div><span>Claim</span><strong id="claim-status">none</strong></div>
+      <div><span>User event</span><strong id="user-event-index">none</strong></div>
+      <div><span>Model event</span><strong id="model-event-index">none</strong></div>
+      <div><span>Claim event</span><strong id="claim-event-index">none</strong></div>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <h2>Interpretation / Claim</h2>
+        <div id="interpretation-summary" class="artifact-list">No interpretation yet.</div>
+        <div id="claim-summary" class="artifact-list">No claim yet.</div>
+        <details>
+          <summary>view raw JSON</summary>
+          <pre id="raw-interpretation">null</pre>
+          <pre id="raw-claim">null</pre>
+        </details>
+      </article>
+
+      <article class="panel">
+        <h2>Memory Proposals</h2>
+        <div id="proposal-list" class="artifact-list">No proposals loaded.</div>
+        <details>
+          <summary>view raw JSON</summary>
+          <pre id="raw-proposals">null</pre>
+        </details>
+      </article>
+
+      <article class="panel">
+        <h2>Maintenance</h2>
+        <h3>Pulse</h3>
+        <div id="pulse-summary" class="artifact-list">No pulse loaded.</div>
+        <h3>Findings</h3>
+        <div id="finding-list" class="artifact-list">No report loaded.</div>
+        <details>
+          <summary>view raw JSON</summary>
+          <pre id="raw-maintenance">null</pre>
+        </details>
+      </article>
+
+      <article class="panel">
+        <h2>Tool Results</h2>
+        <div id="tool-results" class="artifact-list">No tool results.</div>
+        <details>
+          <summary>view raw JSON</summary>
+          <pre id="raw-tools">null</pre>
+        </details>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>Raw Artifact Viewer</h2>
+      <p>Backend artifacts are shown without reinterpretation.</p>
+      <pre id="raw-all">{}</pre>
+    </section>
+  </main>
+  <script src="/static/hud.js"></script>
+</body>
+</html>
